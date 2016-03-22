@@ -13,11 +13,11 @@ and updating a progress box or window with the status.  This sort of thing
 should be pretty common but surprisingly, I was unable to find many examples
 that did it using the method recommended by the more recent documentation.
 
-This is a very simple example of a PyQt ``MainWindow'' application containing a
-single push button that opens a ``ProgressDialog'' window that performs some
+This is a very simple example of a PyQt `MainWindow' application containing a
+single push button that opens a `ProgressDialog' window that performs some
 time-intensive operation in a separate thread and returns control to the main
 thread once the operation ends or is canceled.  If your code is still
-subclassing ``QThread'' and overloading the ``run()'' method, I hope this
+subclassing `QThread' and overloading the `run()' method, I hope this
 helps.
 
 Requirements
@@ -29,6 +29,6 @@ Future
 ------
 I will probably take some time to make this more appealing, but for now, it
 works and demonstrates how to farm time-intensive work out to another thread
-and end or cancel it, without generating a ton of ``QThread destroyed while
-thread is still running'' errors.
+and end or cancel it, without generating a ton of `QThread destroyed while
+thread is still running' errors.
 
