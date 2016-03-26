@@ -15,9 +15,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     @pyqtSignature("")
     def on_pushButton_clicked(self):
         self.progressBox = QProgressDialog(
-            "Counting to 100...", "Cancel", 0, 100)
-        self.progressBox.setModal(True)
+            "Counting to 100...", "Cancel", 0, 100, parent=self)
         self.progressBox.forceShow()
+        self.progressBox.setModal(True)
         self.progressBox.setAutoClose(True)
 
         self.Thread = QThread()
