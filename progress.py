@@ -4,16 +4,16 @@ import time
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
-from ui_main_window import Ui_MainWindow
+from ui_main_window import Ui_Countdown
 
-class MainWindow(QMainWindow, Ui_MainWindow):
+class MainWindow(QMainWindow, Ui_Countdown):
 
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
 
     @pyqtSignature("")
-    def on_pushButton_clicked(self):
+    def on_countdownButton_clicked(self):
         self.progressBox = QProgressDialog(
             "Counting to 100...", "Cancel", 0, 100, parent=self)
         self.progressBox.forceShow()
@@ -40,7 +40,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 class Worker(QObject):
-
     finished = pyqtSignal()
     status = pyqtSignal(dict)
     
@@ -63,12 +62,12 @@ class Worker(QObject):
 
 def counter(start, stop):
     "Simulates long process that periodically yields status"
-    for number in range(start, stop, 10):
+    for number in range(start, stop):
         yield {"progress" : number, "string" : str(number)}
         if number == 100:
             break
         else:
-            time.sleep(1)
+            time.sleep(0.1)
                 
 def main():
     app = QApplication(sys.argv)

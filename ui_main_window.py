@@ -22,28 +22,21 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(301, 162)
-        self.centralwidget = QtGui.QWidget(MainWindow)
+class Ui_Countdown(object):
+    def setupUi(self, Countdown):
+        Countdown.setObjectName(_fromUtf8("Countdown"))
+        Countdown.resize(301, 162)
+        self.centralwidget = QtGui.QWidget(Countdown)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
-        self.pushButton = QtGui.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(100, 70, 90, 27))
-        self.pushButton.setObjectName(_fromUtf8("pushButton"))
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 301, 23))
-        self.menubar.setObjectName(_fromUtf8("menubar"))
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtGui.QStatusBar(MainWindow)
-        self.statusbar.setObjectName(_fromUtf8("statusbar"))
-        MainWindow.setStatusBar(self.statusbar)
+        self.countdownButton = QtGui.QPushButton(self.centralwidget)
+        self.countdownButton.setGeometry(QtCore.QRect(100, 70, 90, 27))
+        self.countdownButton.setObjectName(_fromUtf8("countdownButton"))
+        Countdown.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(Countdown)
+        QtCore.QMetaObject.connectSlotsByName(Countdown)
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
-        self.pushButton.setText(_translate("MainWindow", "PushButton", None))
+    def retranslateUi(self, Countdown):
+        Countdown.setWindowTitle(_translate("Countdown", "Countdown Window", None))
+        self.countdownButton.setText(_translate("Countdown", "Start", None))
 
